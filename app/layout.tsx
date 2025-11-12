@@ -9,9 +9,9 @@ export const metadata: Metadata = {
   title: "De Taquito",
   description: "Organizá tus partidos. Sin drama. Sin excusas.",
   icons: {
-    icon: "/favicon.png",
-    shortcut: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/favicon.ico",
   },
 };
 
