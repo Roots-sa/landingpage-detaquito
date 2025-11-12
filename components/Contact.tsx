@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { Check, Send } from "lucide-react";
+import { Check } from "lucide-react";
 import { z } from "zod";
 
 const betaSchema = z.object({
@@ -17,16 +17,16 @@ const topFeatures = [
 
 const betaBenefits = [
   {
-    text: "Acceso a panel de organización",
-    highlight: "Acceso a panel",
+    label: "Acceso a panel",
+    trailing: " de organización",
   },
   {
-    text: "Beneficios para canchas y promotores",
-    highlight: "Beneficios",
+    label: "Beneficios",
+    trailing: " para canchas y promotores",
   },
   {
-    text: "Reportes y estadísticas en tiempo real",
-    highlight: "Reportes y estadísticas",
+    label: "Reportes y estadísticas",
+    trailing: " en tiempo real",
   },
 ];
 
@@ -75,7 +75,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="relative  bg-[#f6f7f8] py-24 sm:py-32">
+    <section id="contact" className="relative  bg-[#F5F5F5] py-24 sm:py-32">
       <div className="relative mx-auto flex max-w-6xl flex-col gap-16 px-4 sm:px-6">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center">
           <div className="relative mx-auto max-w-lg overflow-hidden rounded-3xl ">
@@ -186,15 +186,15 @@ export default function Contact() {
             <ul className="mt-6 space-y-3">
               {betaBenefits.map((benefit) => (
                 <li
-                  key={benefit.text}
+                  key={benefit.label}
                   className="flex items-start gap-3 text-base font-semibold"
                 >
                   <span className="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-[#00b37e]/15 text-[#00b37e]">
                     <Check className="h-4 w-4" />
                   </span>
                   <span className="text-[#6e7480]">
-                    <span className="text-[#00b37e]">{benefit.highlight}</span>
-                    {benefit.text.replace(benefit.highlight, "")}
+                    <span className="text-[#00b37e]">{benefit.label}</span>
+                    {benefit.trailing}
                   </span>
                 </li>
               ))}

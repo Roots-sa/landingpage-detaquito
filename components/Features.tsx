@@ -35,7 +35,7 @@ export default function Features() {
   return (
     <section
       id="features"
-      className="relative overflow-hidden bg-[#f6f7f8] pb-24 pt-28 sm:pb-32 sm:pt-32"
+      className="relative overflow-hidden bg-[#F5F5F5] pb-24 pt-28 sm:pb-32 sm:pt-32"
     >
       <div className="absolute inset-x-0 top-[-120px] h-56 origin-top bg-cover bg-center" />
       <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-black/40 via-black/0 to-transparent" />

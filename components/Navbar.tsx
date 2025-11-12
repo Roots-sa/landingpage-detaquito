@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const navigationLinks = [
   { label: "Cómo funciona", href: "#features" },
   { label: "Beneficios", href: "#about" },
@@ -12,15 +14,12 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5">
         <div className="flex items-center gap-3  pr-6">
           <div className="flex items-end gap-2">
-            <img
+            <Image
               src="/assets/logo.png"
               alt="De Taquito"
-              className="h-10 w-auto object-contain md:h-12"
-            />
-            <img
-              src="/assets/logo-o.png"
-              alt="Balón De Taquito"
-              className="h-8 w-8 translate-y-0.5 object-contain md:h-9 md:w-9"
+              width={178}
+              height={48}
+              className="h-12 w-auto object-contain md:h-12"
             />
           </div>
         </div>

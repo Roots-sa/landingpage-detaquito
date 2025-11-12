@@ -6,9 +6,8 @@ import { Analytics } from "@vercel/analytics/react";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Roots - Innovación desde la raíz",
-  description:
-    "Transformamos ideas en soluciones que generan impacto. Desarrollamos MVPs funcionales y escalables.",
+  title: "De Taquito",
+  description: "Organizá tus partidos. Sin drama. Sin excusas.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
