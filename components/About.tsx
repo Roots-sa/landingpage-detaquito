@@ -53,7 +53,7 @@ export default function About() {
   return (
     <section id="about" className="relative bg-[#F5F5F5] py-24 sm:py-28">
       <div className="relative mx-auto flex max-w-6xl flex-col gap-16 px-4 sm:px-6 lg:flex-row lg:items-center">
-        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:flex-col lg:justify-center lg:gap-16 lg:pt-24">
+        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 lg:flex-col lg:justify-center lg:gap-16 lg:pt-48">
           {[1, 2, 3, 4].map((item) => (
             <div
               key={item}
