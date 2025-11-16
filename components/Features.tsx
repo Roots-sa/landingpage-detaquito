@@ -42,14 +42,17 @@ export default function Features() {
         <div className="mb-10 flex items-center justify-center gap-4">
           <Image src="/assets/arco.png" alt="Arco" width={182} height={104} />
         </div>
-        <h2 className="flex items-center justify-center text-5xl font-extrabold text-[#0b1f1a] sm:text-5xl md:text-5xl gap-1">
-          Como funciona De Taquit
-          <Image
-            src="/assets/logo-o-verde.png"
-            alt="Mate balón De Taquito"
-            width={32}
-            height={32}
-          />
+        <h2 className="flex flex-wrap items-center justify-center text-5xl font-extrabold text-[#0b1f1a] sm:text-5xl md:text-5xl gap-1">
+          Como funciona De Taqui
+          <span className="inline-flex items-center whitespace-nowrap">
+            t
+            <Image
+              src="/assets/logo-o-verde.png"
+              alt="Mate balón De Taquito"
+              width={32}
+              height={32}
+            />
+          </span>
         </h2>
         <p className="mt-14 text-base font-semibold text-[#8C8C8C] sm:text-2xl">
           Organizá tus partidos en tres pasos simples: creá, invitá y jugá.
