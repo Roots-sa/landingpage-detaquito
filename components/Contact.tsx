@@ -251,9 +251,7 @@ export default function Contact() {
                     disabled={isSubmitting}
                     className="w-full rounded-full bg-[#00b37e] py-3 text-base font-semibold text-white shadow-lg transition hover:bg-[#00a170] disabled:cursor-not-allowed disabled:bg-[#7f8b86]"
                   >
-                    {isSubmitting
-                      ? "Enviando..."
-                      : "¡Gran pase! Ahora quedamos nosotros: en breve te contactamos."}
+                    {isSubmitting ? "Enviando..." : "Enviar"}
                   </button>
                 </form>
               )}
