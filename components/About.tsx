@@ -1,48 +1,40 @@
 "use client";
 
 import Image from "next/image";
-import {
-  Wallet,
-  CalendarClock,
-  BellRing,
-  Users,
-  BarChart3,
-  ShieldCheck,
-} from "lucide-react";
 
 const features = [
   {
-    icon: Wallet,
+    iconSrc: "/assets/Vector-3.png",
     title: "Pagos integrados",
     description:
       "Chau excusas: cada jugador puede aportar su parte desde la app — pago seguro, split automático y comprobante. Ideal para alquiler de cancha y premios.",
   },
   {
-    icon: CalendarClock,
+    iconSrc: "/assets/Vector-4.png",
     title: "Gestión completa de eventos",
     description:
       "Creá, editá, cancelá o reprogramá partidos con historial y notificaciones. Todo el control en una pantalla.",
   },
   {
-    icon: BellRing,
+    iconSrc: "/assets/Vector-5.png",
     title: "Notificaciones inteligentes",
     description:
       "Recordatorios automáticos, confirmaciones y avisos si alguien se baja: la app coordina por vos.",
   },
   {
-    icon: Users,
+    iconSrc: "/assets/Vector-6.png",
     title: "Amigos y equipos",
     description:
       "Mantené tus grupos de juego: planteles recurrentes, roles, capitanes y convocatorias rápidas.",
   },
   {
-    icon: BarChart3,
+    iconSrc: "/assets/Vector-7.png",
     title: "Historial y rendimiento",
     description:
       "Estadísticas personales: goles, asistencias, racha y rankings. Para los que juegan en serio y para los que solo quieren divertirse.",
   },
   {
-    icon: ShieldCheck,
+    iconSrc: "/assets/Vector-8.png",
     title: "Configuración y privacidad",
     description:
       "Control total de perfil, notificaciones y métodos de pago. Vos elegís cómo y cuándo jugar.",
@@ -85,13 +77,13 @@ export default function About() {
           </div>
 
           <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {features.map(({ icon: Icon, title, description }) => (
+            {features.map(({ iconSrc, title, description }) => (
               <div
                 key={title}
                 className="flex h-full flex-col rounded-3xl bg-white p-7 shadow-[0_18px_45px_-25px_rgba(12,32,28,0.4)]"
               >
                 <div className="flex h-14 w-14 items-center justify-center  text-[#00b37e]">
-                  <Icon className="h-7 w-7" />
+                  <Image src={iconSrc} alt={title} width={36} height={36} />
                 </div>
                 <h3 className="mt-6 text-xl font-bold text-[#0b1f1a]">
                   {title}

@@ -99,7 +99,7 @@ export default function Contact() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] lg:items-center">
           <div className="relative  overflow-hidden rounded-3xl ">
             <Image
-              src="/assets/adelanto.png"
+              src="/assets/adelanto.svg"
               alt="Vista previa de De Taquito"
               width={640}
               height={640}

@@ -1,11 +1,10 @@
 "use client";
 
-import { CalendarDays, Users2, ListChecks, Goal } from "lucide-react";
 import Image from "next/image";
 
 const steps = [
   {
-    icon: CalendarDays,
+    iconSrc: "/assets/Vector.png",
     title: "Creá tu partido",
     description:
       "Elegí lugar, fecha, hora y el tipo de partido. Todo rápido para que no se enfríe la idea.",
@@ -13,7 +12,7 @@ const steps = [
     highlightClass: "font-semibold text-emerald-600",
   },
   {
-    icon: Users2,
+    iconSrc: "/assets/Vector-1.png",
     title: "Invitá a tus amigos",
     description:
       "Compartí un link o invitá directo desde la app. Los equipos se arman en segundos y la confirmación llega por notificación.",
@@ -22,7 +21,7 @@ const steps = [
       "font-semibold text-emerald-600 underline underline-offset-4 decoration-emerald-400",
   },
   {
-    icon: ListChecks,
+    iconSrc: "/assets/Vector-2.png",
     title: "Jugá y llevá el marcador",
     description:
       "Anotá resultado, sumá goles y guarda el historial de todos tus encuentros y torneos.",
@@ -65,7 +64,6 @@ export default function Features() {
 
         <div className="mt-14 grid w-full gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {steps.map((step, index) => {
-            const Icon = step.icon;
             const [before, after = ""] = step.description.split(step.highlight);
             return (
               <div
@@ -73,7 +71,12 @@ export default function Features() {
                 className="group flex h-full flex-col rounded-3xl bg-white p-8 text-left shadow-[0_12px_35px_-20px_rgba(13,32,20,0.35)] transition hover:-translate-y-2 hover:shadow-[0_20px_45px_-25px_rgba(13,32,20,0.45)]"
               >
                 <div className="flex h-12 w-12 items-center justify-center text-[#00B37E]">
-                  <Icon className="h-12 w-12" />
+                  <Image
+                    src={step.iconSrc}
+                    alt={step.title}
+                    width={48}
+                    height={48}
+                  />
                 </div>
                 <h3 className="mt-6 text-2xl font-bold text-[#0b1f1a]">
                   <span className="text-[#00B37E]">{index + 1}.</span>{" "}
