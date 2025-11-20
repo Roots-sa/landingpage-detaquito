@@ -43,9 +43,9 @@ export default function Features() {
           <Image src="/assets/arco.png" alt="Arco" width={182} height={104} />
         </div>
         <h2 className="flex flex-wrap items-center justify-center text-5xl font-extrabold text-[#0b1f1a] sm:text-5xl md:text-5xl gap-1">
-          Como funciona De Taqui
+          Como funciona{" "}
           <span className="inline-flex items-center whitespace-nowrap">
-            t
+            De Taquit
             <Image
               src="/assets/logo-o-verde.png"
               alt="Mate balón De Taquito"
