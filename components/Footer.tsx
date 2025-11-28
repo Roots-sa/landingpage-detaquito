@@ -18,6 +18,12 @@ export default function Footer() {
           <p className="text-base font-semibold text-white sm:text-lg">
             detaquitoapp@gmail.com
           </p>
+          <a
+            href="/terminos-y-condiciones"
+            className="text-sm text-white/70 transition hover:text-white hover:underline"
+          >
+            Términos y Condiciones
+          </a>
         </div>
 
         <div className="flex flex-col items-center gap-4 text-center md:items-end md:text-right">
