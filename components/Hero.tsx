@@ -24,10 +24,16 @@ export default function Hero() {
           cobrar la entrada y llevar las estadísticas — todo en una app pensada
           para jugar más y preocuparte menos.
         </p>
-        <div className="flex items-center justify-center">
-          <button className="rounded-full bg-[#00B37E] px-10 py-4 text-base font-semibold text-white shadow-xl transition hover:bg-emerald-400 sm:text-lg">
-            Próximamente
-          </button>
+
+        <div className="flex justify-center">
+          <a
+            href="https://play.google.com/store/apps/details?id=com.eventsapp.myapp"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-lg bg-[#00B37E] px-8 py-4 text-base font-semibold text-white shadow-lg transition hover:bg-emerald-400"
+          >
+            Descarga la app
+          </a>
         </div>
       </div>
 
