@@ -24,7 +24,7 @@ function EventForm() {
     setError("");
 
     try {
-      // Intentar abrir la app con deep link
+      // Deep link según la configuración de la app: scheme "detaquito"
       const appLink = `detaquito://event/${eventCodeToUse}`;
       
       // Detectar el sistema operativo
@@ -32,20 +32,63 @@ function EventForm() {
       const isAndroid = /Android/.test(userAgent);
       const isIOS = /iPhone|iPad|iPod/.test(userAgent);
 
+      // URLs de las tiendas según package/bundleIdentifier
+      const androidStoreUrl = "https://play.google.com/store/apps/details?id=com.eventsapp.myapp";
+      const iosStoreUrl = "https://apps.apple.com";
+
       if (isAndroid || isIOS) {
-        // Intentar abrir la app
-        window.location.href = appLink;
+        let opened = false;
+
+        // Intentar abrir con window.location (funciona en iOS y algunos Android)
+        try {
+          window.location.href = appLink;
+          opened = true;
+        } catch (e) {
+          console.error("Error al abrir deep link:", e);
+        }
+
+        // Para Android, también intentar con un iframe oculto (método alternativo)
+        if (isAndroid && !opened && typeof document !== "undefined") {
+          try {
+            const iframe = document.createElement("iframe");
+            iframe.style.display = "none";
+            iframe.src = appLink;
+            document.body.appendChild(iframe);
+
+            // Remover el iframe después de un momento
+            setTimeout(() => {
+              if (iframe.parentNode) {
+                document.body.removeChild(iframe);
+              }
+            }, 2000);
+
+            opened = true;
+          } catch (e) {
+            console.error("Error al abrir deep link con iframe:", e);
+          }
+        }
 
         // Si después de 1.5 segundos no se abrió la app, redirigir a la tienda
         setTimeout(() => {
           if (isAndroid) {
-            window.location.href = "https://play.google.com/store/apps/details?id=com.eventsapp.myapp";
+            window.location.href = androidStoreUrl;
           } else if (isIOS) {
-            window.location.href = "https://apps.apple.com";
+            window.location.href = iosStoreUrl;
           }
         }, 1500);
+
+        // Fallback adicional: si pasan 2 segundos, ir a la tienda
+        setTimeout(() => {
+          if (document.hidden === false) {
+            if (isAndroid) {
+              window.location.href = androidStoreUrl;
+            } else if (isIOS) {
+              window.location.href = iosStoreUrl;
+            }
+          }
+        }, 2000);
       } else {
-        // En desktop, mostrar mensaje o redirigir
+        // En desktop, mostrar mensaje
         setError("La app solo está disponible en dispositivos móviles. Descargá la app para unirte al evento.");
         setLoading(false);
       }
