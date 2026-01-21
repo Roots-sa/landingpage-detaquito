@@ -25,7 +25,7 @@ function EventForm() {
 
     try {
       // Deep link según la configuración de la app: scheme "detaquito"
-      const appLink = `detaquito://event/${eventCodeToUse}`;
+      const appLink = `myapp://event/${eventCodeToUse}`;
       
       // Detectar el sistema operativo
       const userAgent = typeof navigator !== "undefined" ? navigator.userAgent || "" : "";
